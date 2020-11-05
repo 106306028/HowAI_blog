@@ -1,0 +1,16 @@
+* {
+    margin: 0;   /*預設邊界修改為0*/
+    padding: 0;  
+}
+
+body {
+    margin-top: 80px!important;
+}
+
+ul.navbar-right{
+    margin-right: 0;
+}
+
+p.warning{
+    color: red;
+}
