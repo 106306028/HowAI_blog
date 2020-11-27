@@ -22,8 +22,11 @@
         <!-- 選用寬度填滿頁面的容器 -->
         <div class="container-fluid">
             <!-- 導航條主標題 -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="{% url 'home' %}">HowAI論壇</a>
+            <div class="navbar-header" style="margin-left: 4px;">
+                <a class="navbar-brand" href="#">
+                    <img src="/static/favicon-blue.png" width="52" height="43" alt="" style="margin-top:-12px;">
+                </a>
+                <a class="navbar-brand" href="{% url 'home' %}" style="color: rgb(41, 180, 190);">HowAI論壇</a>
                 <!-- 響應式下拉選單 -->
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="icon-bar"></span>
@@ -51,6 +54,9 @@
                             <a href="{% url 'register' %}?from={{ request.get_full_path }}">註冊</a>
                         </li>
                     {% else %}
+                        <li class="{% block nav_course_active %}{% endblock %}">
+                            <a href="{% url 'course_list' %}">我的課程</a>
+                        </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
                                 {% if user.has_nickname %}
@@ -83,7 +89,7 @@
     <div class="modal fade" id="login_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
-                <form id="login_medal_form" action="" method="POST">
+                <form id="login_modal_form" action="" method="POST">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title">登入</h4>
@@ -95,7 +101,7 @@
                             <label for="{{ field.id_for_label }}">{{ field.label }}</label>
                             {{ field }}
                         {% endfor %}
-                        <span id="login_medal_tip" class="text-danger"></span>
+                        <span id="login_modal_tip" class="text-danger"></span>
                     </div>
 
                     <div class="modal-footer">

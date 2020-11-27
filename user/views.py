@@ -61,7 +61,7 @@ def register(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect(request.GET.get('from', reverse('home')))
+    return redirect(reverse('home'))
 
 def user_info(request):
     user = request.user

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'read_statistic',
     'likes',
     'user',
+    'course',
 ]
 
 MIDDLEWARE = [

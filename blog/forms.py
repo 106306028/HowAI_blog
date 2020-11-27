@@ -21,7 +21,7 @@ class BlogForm(forms.Form):
     content = forms.CharField(
         label='內文',
         widget=CKEditorWidget(config_name='blog_ckeditor'),
-                            error_messages={'required':'內容不得為空白!'}
+        error_messages={'required':'內容不得為空白!'}
     )
     def __init__(self, *args, **kwargs):
         if 'user' in kwargs:

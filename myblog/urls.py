@@ -12,6 +12,7 @@ urlpatterns = [
     path('comment/',include('comment.urls')),
     path('likes/',include('likes.urls')),
     path('user/', include('user.urls')),
+    path('course/', include('course.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #導入路徑
